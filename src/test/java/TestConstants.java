@@ -23,20 +23,27 @@ public class TestConstants {
             "England", "AFC Bournemouth", "Burton Albion FC", "Preston North End FC"};
     private static final String[] EXPECTED_SECOND_HIGHEST_SCORER  = {"Denis Cheryshev", "Cristiano Ronaldo", "Antoine Griezmann", "Romelu Lukaku", "Kylian Mbappé"};
     private static final String[] EXPECTED_COMPETITIONS_LIST      =
-        {"WC Qualification", "Superliga Argentina", "Supercopa Argentina", "Primera B Nacional", "WC Qualification", "FFA Cup", "A League", "Erste Liga",
-            "Bundesliga", "ÖFB Cup", "Playoffs 1/2", "Jupiler Pro League", "Playoffs II", "Coupe de Belgique", "Supercoupe de Belgique", "Division 1B", "LFPB", "Premier Liga", "Série D", "Série A",
-            "Série C", "Série B", "Copa do Brasil", "Kupa na Bulgarija", "A PFG", "Canadian Championship", "Playoffs 1/2", "Supercopa de Chile", "Primera División", "Chinese Super League",
-            "Superliga de Colombia", "Liga Postobón", "Prva Liga", "Synot Liga", "Superliga", "Play Offs 1/2", "DBU Pokalen", "Copa Pilsener Serie A", "Championship", "League One", "League Two",
-            "Premier League", "FA Cup", "Football League Cup", "FA Community Shield", "National League", "Meistriliiga", "WC Qualification", "UEFA Women's EURO", "UEFA Europa League",
-            "UEFA Champions League", "European Championship", "Veikkausliiga", "Suomen Cup", "Ligue 2", "Coupe de France", "Playoffs 1/2", "Coupe de la Ligue", "Playoffs 2/3", "Ligue 1",
-            "Trophée des Champions", "DFB-Pokal", "Regionalliga", "Frauen Bundesliga", "2. Bundesliga", "DFL Super Cup", "Bundesliga", "3. Liga", "Greek Cup", "Super League", "Magyar Kupa", "NB I",
-            "Úrvalsdeild", "I-League", "Ligat ha'Al", "Serie B", "Coppa Italia", "Serie C", "Supercoppa", "Serie A", "J. League Division 2", "J.League Cup", "J. League", "Super Cup", "Virslīga",
-            "A Lyga", "Premier League", "Copa MX", "SuperCopa MX", "Liga MX", "Eredivisie", "Jupiler League", "KNVB Beker", "Johan Cruijff Schaal", "Premiership", "League Cup", "Playoffs 1/2",
-            "1. divisjon", "Tippeligaen", "WC Qualification", "Liga Panameña de Fútbol", "Primera División", "Superpuchar Polski", "Puchar Polski", "Liga2 Cabovisão", "Primeira Liga",
-            "Supertaça Cândido de Oliveira", "Taça de Portugal", "Premier Division", "Liga II", "Supercupa României", "Liga I", "Russian Super Cup", "RFPL", "FNL", "Russian Cup", "Playoffs 1/2",
-            "Scottish Cup", "Premier League", "Championship", "Playoffs 2/3", "ABSA Premiership", "Copa America", "Copa Sudamericana", "WC Qualification", "Copa del Rey", "Primera Division",
-            "Segunda División", "Supercopa de España", "Superettan", "Playoffs 2/3", "Playoffs 1/2", "Allsvenskan", "Schweizer Pokal", "Super League", "Süper Lig", "1. Lig", "TFF Süper Kupa",
-            "Playoffs 1/2", "Superkubok Ukrainy", "Premier Liha", "Kubok Ukrainy", "MLS", "Primera División", "Primera División", "V-League", "Welsh Premier League", "FIFA World Cup"
+        {"WC Qualification","Superliga Argentina","Supercopa Argentina","Primera B Nacional","WC Qualification","A League","FFA Cup",
+                "Playoffs 1/2","Bundesliga","ÖFB Cup","Erste Liga","Supercoupe de Belgique","Playoffs II","Division 1B",
+                "Jupiler Pro League","Coupe de Belgique","LFPB","Premier Liga","Série C","Série B","Copa do Brasil","Série D",
+                "Série A","Kupa na Bulgarija","A PFG","Canadian Championship","Primera División","Playoffs 1/2","Supercopa de Chile",
+                "Chinese Super League","Liga Postobón","Superliga de Colombia","Prva Liga","Synot Liga","Play Offs 1/2","Superliga",
+                "DBU Pokalen","Copa Pilsener Serie A","FA Cup","Premier League","Football League Cup","National League","League One",
+                "FA Community Shield","Championship","League Two","Meistriliiga","UEFA Women's EURO","WC Qualification",
+                "European Championship","UEFA Champions League","UEFA Europa League","Suomen Cup","Veikkausliiga","Coupe de France",
+                "Playoffs 2/3","Coupe de la Ligue","Ligue 1","Ligue 2","Trophée des Champions","Playoffs 1/2","DFB-Pokal","2. Bundesliga",
+                "Regionalliga","Frauen Bundesliga","Bundesliga","DFL Super Cup","3. Liga","Greek Cup","Super League","NB I","Magyar Kupa",
+                "Úrvalsdeild","I-League","Ligat ha'Al","Serie C","Supercoppa","Serie A","Serie B","Coppa Italia","J. League","Super Cup",
+                "J. League Division 2","J.League Cup","Virslīga","A Lyga","Premier League","SuperCopa MX","Liga MX","Copa MX","KNVB Beker",
+                "Eredivisie","Johan Cruijff Schaal","Jupiler League","Premiership","League Cup","Tippeligaen","Playoffs 1/2","1. divisjon",
+                "WC Qualification","Liga Panameña de Fútbol","Primera División","Superpuchar Polski","Puchar Polski","Primeira Liga",
+                "Supertaça Cândido de Oliveira","Taça de Portugal","Liga2 Cabovisão","Premier Division","Supercupa României","Liga I",
+                "Liga II","Playoffs 1/2","Russian Super Cup","FNL","RFPL","Russian Cup","Playoffs 2/3","Scottish Cup","Premier League",
+                "Championship","ABSA Premiership","Copa America","Copa Sudamericana","WC Qualification","Primera Division",
+                "Segunda División","Supercopa de España","Copa del Rey","Playoffs 1/2","Allsvenskan","Superettan","Playoffs 2/3",
+                "Schweizer Pokal","Super League","1. Lig","TFF Süper Kupa","Süper Lig","Kubok Ukrainy","Playoffs 1/2","Superkubok Ukrainy",
+                "Premier Liha","MLS","Supercopa Uruguaya","Primera División","Primera División","V-League","Welsh Premier League",
+                "FIFA World Cup"
         };
 
     public static String[] getActualDefenders() {
