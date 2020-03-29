@@ -92,11 +92,11 @@ public class APITasks {
 
         httpClient = HttpClientBuilder.create().build();
         uriBuilder = new URIBuilder();
-        uriBuilder.setScheme("Http").setHost(ConfigReader.getProperty("host")).setPath("/v2/teams/66");
-
+        uriBuilder.setScheme(SCHEME).setHost(HOST).setPath("/v2/teams/66");
         httpGet = new HttpGet(uriBuilder.build());
-        httpGet.setHeader(ConfigReader.getProperty("contType"), ConfigReader.getProperty("appJson"));
-        httpGet.setHeader("X-Auth-Token", ConfigReader.getProperty("token"));
+
+        httpGet.setHeader("Accept", JSON);
+        httpGet.setHeader(KEY, TOKEN);
         response = httpClient.execute(httpGet);
         objectMapper = new ObjectMapper();
 
@@ -123,11 +123,11 @@ public class APITasks {
     public static List<String> getMidfielderFromBrazil() throws URISyntaxException, IOException {
         httpClient = HttpClientBuilder.create().build();
         uriBuilder = new URIBuilder();
-        uriBuilder.setScheme("Http").setHost(ConfigReader.getProperty("host")).setPath("/v2/teams/66");
-
+        uriBuilder.setScheme(SCHEME).setHost(HOST).setPath("/v2/teams/66");
         httpGet = new HttpGet(uriBuilder.build());
-        httpGet.setHeader(ConfigReader.getProperty("contType"), ConfigReader.getProperty("appJson"));
-        httpGet.setHeader("X-Auth-Token", ConfigReader.getProperty("token"));
+
+        httpGet.setHeader("Accept", JSON);
+        httpGet.setHeader(KEY, TOKEN);
         response = httpClient.execute(httpGet);
         objectMapper = new ObjectMapper();
 
@@ -138,9 +138,10 @@ public class APITasks {
         List<String> midfieldersFromBrazil = new ArrayList<>();
         for (int i = 0; i < allPlayers.getSquad().size(); i++) {
             if (allPlayers.getSquad().get(i).getPosition().equals("Midfielder")) {
-                if(allPlayers.getSquad().get(i).getCountryOfBirth().equals("Brazil")||allPlayers.getSquad().get(i).getNationality().equals("Brazil") ){
-                midfieldersFromBrazil.add(allPlayers.getSquad().get(i).getName());
-            }}
+                if (allPlayers.getSquad().get(i).getCountryOfBirth().equals("Brazil") || allPlayers.getSquad().get(i).getNationality().equals("Brazil")) {
+                    midfieldersFromBrazil.add(allPlayers.getSquad().get(i).getName());
+                }
+            }
         }
 
         System.out.println(midfieldersFromBrazil);
