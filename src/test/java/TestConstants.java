@@ -9,8 +9,7 @@ public class TestConstants {
             "Max Dunne", "Teden Mengi"};
     private static final String[] GOALKEEPERS                     = {"David De Gea", "Sergio Romero", "Lee Grant", "Matej Kovar"};
     private static final String[] EXPECTED_MIDFIELDERS            =
-        {"Fred", "Ashley Young", "Jesse Lingard", "Harry Maguire", "Paul Pogba", "Nemanja Matić", "Scott McTominay", "Daniel James", "Aaron Wan-Bissaka", "Mason Greenwood",
-            "James Garner", "Dylan Levitt", "Arnau Puigmal", "Di'Shon Bernard", "Ethan Galbraith"};
+        {"Fred", "Bruno Fernandes", "Jesse Lingard", "Paul Pogba", "Nemanja Matić", "Scott McTominay", "Juan Mata", "Angel Gomes", "Daniel James", "Andreas Pereira", "Tahith Chong", "James Garner", "Dylan Levitt", "Arnau Puigmal", "Ethan Galbraith"};
     private static final String[] EXPECTED_MIDFIELDER_FROM_BRAZIL = {"Fred"};
     private static final String[] EXPECTED_ATTACKERS              = {"Marcus Rashford", "Angel Gomes", "D'Mani Bughail-Mellor"};
     private static final String[] EXPECTED_COACH                  = {"Gaizka Garitano"};

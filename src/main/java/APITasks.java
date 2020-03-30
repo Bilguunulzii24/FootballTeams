@@ -1,6 +1,9 @@
 import AllNameOfLigue.CompetitionPojo;
 import Midfielders.AllMidfielders;
 import ToScorers.TopScorerPojo;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
@@ -14,6 +17,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static io.restassured.RestAssured.given;
 
 /**
  * Created by nurkulov 12/26/19
@@ -90,27 +95,13 @@ public class APITasks {
      */
     public static List<String> getMidfielders() throws IOException, URISyntaxException {
 
-        httpClient = HttpClientBuilder.create().build();
-        uriBuilder = new URIBuilder();
-        uriBuilder.setScheme(SCHEME).setHost(HOST).setPath("/v2/teams/66");
-        httpGet = new HttpGet(uriBuilder.build());
+        RestAssured.baseURI = "http://api.football-data.org";
+        RestAssured.basePath = "/v2/teams/66";
+        Response response = given().accept(ContentType.JSON)
+                .header(KEY, TOKEN)
+                .when().request("GET").then().statusCode(200).extract().response();
 
-        httpGet.setHeader("Accept", JSON);
-        httpGet.setHeader(KEY, TOKEN);
-        response = httpClient.execute(httpGet);
-        objectMapper = new ObjectMapper();
-
-        Assert.assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
-        Assert.assertTrue(response.getEntity().getContentType().getValue().contains(JSON));
-        AllMidfielders allPlayers = objectMapper.readValue(response.getEntity().getContent(), AllMidfielders.class);
-
-        List<String> midfielders = new ArrayList<>();
-        for (int i = 0; i < allPlayers.getSquad().size(); i++) {
-            if (allPlayers.getSquad().get(i).getPosition().equals("Midfielder")) {
-                midfielders.add(allPlayers.getSquad().get(i).getName());
-            }
-        }
-
+        List<String> midfielders = response.path("squad.findAll { it.position == 'Midfielder'}.name");
         System.out.println(midfielders);
         return midfielders;
     }
@@ -121,31 +112,15 @@ public class APITasks {
      * Deserialization type: Pojo
      */
     public static List<String> getMidfielderFromBrazil() throws URISyntaxException, IOException {
-        httpClient = HttpClientBuilder.create().build();
-        uriBuilder = new URIBuilder();
-        uriBuilder.setScheme(SCHEME).setHost(HOST).setPath("/v2/teams/66");
-        httpGet = new HttpGet(uriBuilder.build());
+        RestAssured.baseURI = "http://api.football-data.org";
+        RestAssured.basePath = "/v2/teams/66";
+        Response response = given().accept(ContentType.JSON)
+                .header(KEY, TOKEN)
+                .when().request("GET").then().statusCode(200).extract().response();
 
-        httpGet.setHeader("Accept", JSON);
-        httpGet.setHeader(KEY, TOKEN);
-        response = httpClient.execute(httpGet);
-        objectMapper = new ObjectMapper();
-
-        Assert.assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
-        Assert.assertTrue(response.getEntity().getContentType().getValue().contains(JSON));
-        AllMidfielders allPlayers = objectMapper.readValue(response.getEntity().getContent(), AllMidfielders.class);
-
-        List<String> midfieldersFromBrazil = new ArrayList<>();
-        for (int i = 0; i < allPlayers.getSquad().size(); i++) {
-            if (allPlayers.getSquad().get(i).getPosition().equals("Midfielder")) {
-                if (allPlayers.getSquad().get(i).getCountryOfBirth().equals("Brazil") || allPlayers.getSquad().get(i).getNationality().equals("Brazil")) {
-                    midfieldersFromBrazil.add(allPlayers.getSquad().get(i).getName());
-                }
-            }
-        }
-
-        System.out.println(midfieldersFromBrazil);
-        return midfieldersFromBrazil;
+        List<String> midfielders = response.path("squad.findAll { it.position == 'Midfielder' && it.countryOfBirth == 'Brazil' }.name");
+        System.out.println(midfielders);
+        return midfielders;
     }
 
     /*
